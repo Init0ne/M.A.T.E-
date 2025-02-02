@@ -3,10 +3,10 @@ import pandas as pd
 import os
 
 # Configuración de la conexión a la base de datos
-server = 'MATHI\SQLEXPRESS'
+server = 'localhost\SQLEXPRESS'
 database = 'FinancialData'
-username = 'sa'
-password = '1314'
+username = 'user'
+password = 'pass'
 connection_string = f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
 
 # Conectar a la base de datos
