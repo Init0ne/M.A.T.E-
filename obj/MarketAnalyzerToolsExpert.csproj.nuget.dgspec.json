@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert.csproj": {}
+    "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\repo\\MarketAnalyzerToolsExpert.csproj": {}
   },
   "projects": {
-    "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert.csproj": {
+    "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\repo\\MarketAnalyzerToolsExpert.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert.csproj",
+        "projectUniqueName": "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\repo\\MarketAnalyzerToolsExpert.csproj",
         "projectName": "MarketAnalyzerToolsExpert",
-        "projectPath": "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert.csproj",
+        "projectPath": "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\repo\\MarketAnalyzerToolsExpert.csproj",
         "packagesPath": "C:\\Users\\falvo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\MarketAnalyzerToolsExpert\\obj\\",
+        "outputPath": "C:\\Users\\falvo\\OneDrive\\Desktop\\C#\\MarketAnalyzerToolsExpert\\repo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,7 +50,27 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.1, )"
             }
