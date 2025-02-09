@@ -1,22 +1,24 @@
-﻿using MarketAnalyzerToolsExpert.Data;
-using MarketAnalyzerToolsExpert.Helpers;
+﻿using MarketAnalyzerToolsExpert.Helpers;
+using MarketAnalyzerToolsExpert.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MarketAnalyzerToolsExpert
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            // Configurar el servicio de inyección de dependencias
             IServiceProvider serviceProvider = ServiceConfigurationHelper.ConfigureServices();
 
-            // Obtener una instancia del DbContext
-            using FinancialDataContext context = serviceProvider.GetRequiredService<FinancialDataContext>();
+            // Obtener el repositorio de empresas
+            CompanyRepository companyRepository = serviceProvider.GetRequiredService<CompanyRepository>();
 
-            // Ejemplo de uso: Consultar todas las empresas
-            List<Models.Company> companies = [.. context.Companies];
+            // Obtener y mostrar todas las empresas
+            List<Models.Company> companies = await companyRepository.GetAllCompaniesAsync();
             Console.WriteLine($"Número de empresas en la base de datos: {companies.Count}");
+
+            // Para evitar que la consola se cierre de inmediato
+            Console.ReadLine();
         }
     }
 }

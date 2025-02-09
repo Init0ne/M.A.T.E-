@@ -1,4 +1,5 @@
 ﻿using MarketAnalyzerToolsExpert.Data;
+using MarketAnalyzerToolsExpert.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,9 +20,11 @@ namespace MarketAnalyzerToolsExpert.Helpers
             ServiceCollection services = new();
 
             services.AddDbContext<FinancialDataContext>(options =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("FinancialData"));
-            });
+                options.UseSqlServer(configuration.GetConnectionString("FinancialData"))
+            );
+
+            // 🔹 Inyectar el repositorio
+            services.AddScoped<CompanyRepository>();
 
             return services.BuildServiceProvider();
         }
