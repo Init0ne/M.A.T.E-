@@ -1,5 +1,5 @@
 ﻿using MarketAnalyzerToolsExpert.Data;
-using MarketAnalyzerToolsExpert.Repositories;
+using MarketAnalyzerToolsExpert.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

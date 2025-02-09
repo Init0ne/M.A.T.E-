@@ -3,17 +3,32 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MarketAnalyzerToolsExpert.Data;
 
-public partial class FinancialDataContext(DbContextOptions<FinancialDataContext> options) : DbContext(options)
+public partial class FinancialDataContext : DbContext
 {
+    public FinancialDataContext()
+    {
+    }
+
+    public FinancialDataContext(DbContextOptions<FinancialDataContext> options)
+        : base(options)
+    {
+    }
+
     public virtual DbSet<Company> Companies { get; set; }
 
     public virtual DbSet<StockPrice> StockPrices { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=MATHI\\SQLEXPRESS;Database=FinancialData;User Id=sa;Password=1314;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Company>(entity =>
         {
             entity.HasKey(e => e.CompanyId).HasName("PK__Companie__2D971CAC7D6DB4C5");
+
+            entity.HasIndex(e => e.Ticker, "UQ_Companies_Ticker").IsUnique();
 
             entity.HasIndex(e => e.Ticker, "UQ__Companie__42AC12F01DAA0D56").IsUnique();
 

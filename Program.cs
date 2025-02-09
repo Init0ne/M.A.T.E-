@@ -1,5 +1,5 @@
-﻿using MarketAnalyzerToolsExpert.Helpers;
-using MarketAnalyzerToolsExpert.Repositories;
+﻿using MarketAnalyzerToolsExpert.Data.Repositories;
+using MarketAnalyzerToolsExpert.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MarketAnalyzerToolsExpert

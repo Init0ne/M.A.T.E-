@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarketAnalyzerToolsExpert")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+761bcfeb9c58bad10aaf65c61166b723a00630cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c29a6e562f1e4cfc6cbc00f015f6e1d88eb29f56")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarketAnalyzerToolsExpert")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarketAnalyzerToolsExpert")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

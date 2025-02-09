@@ -1,17 +1,10 @@
-﻿using MarketAnalyzerToolsExpert.Data;
-using MarketAnalyzerToolsExpert.Models;
+﻿using MarketAnalyzerToolsExpert.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarketAnalyzerToolsExpert.Repositories
+namespace MarketAnalyzerToolsExpert.Data.Repositories
 {
-    public class CompanyRepository
+    public class CompanyRepository(FinancialDataContext context)
     {
-        private readonly FinancialDataContext _context;
-
-        public CompanyRepository(FinancialDataContext context)
-        {
-            _context = context;
-        }
 
         /// <summary>
         /// Obtener todas las empresas
@@ -19,7 +12,7 @@ namespace MarketAnalyzerToolsExpert.Repositories
         /// <returns></returns>
         public async Task<List<Company>> GetAllCompaniesAsync()
         {
-            return await _context.Companies.ToListAsync();
+            return await context.Companies.ToListAsync();
         }
 
         /// <summary>
@@ -29,7 +22,7 @@ namespace MarketAnalyzerToolsExpert.Repositories
         /// <returns></returns>
         public async Task<Company?> GetCompanyByIdAsync(int companyId)
         {
-            return await _context.Companies.FindAsync(companyId);
+            return await context.Companies.FindAsync(companyId);
         }
 
         /// <summary>
@@ -39,8 +32,8 @@ namespace MarketAnalyzerToolsExpert.Repositories
         /// <returns></returns>
         public async Task AddCompanyAsync(Company company)
         {
-            _context.Companies.Add(company);
-            await _context.SaveChangesAsync();
+            context.Companies.Add(company);
+            await context.SaveChangesAsync();
         }
 
         /// <summary>
@@ -50,8 +43,8 @@ namespace MarketAnalyzerToolsExpert.Repositories
         /// <returns></returns>
         public async Task UpdateCompanyAsync(Company company)
         {
-            _context.Companies.Update(company);
-            await _context.SaveChangesAsync();
+            context.Companies.Update(company);
+            await context.SaveChangesAsync();
         }
 
         /// <summary>
@@ -61,11 +54,11 @@ namespace MarketAnalyzerToolsExpert.Repositories
         /// <returns></returns>
         public async Task DeleteCompanyAsync(int companyId)
         {
-            var company = await _context.Companies.FindAsync(companyId);
+            var company = await context.Companies.FindAsync(companyId);
             if (company != null)
             {
-                _context.Companies.Remove(company);
-                await _context.SaveChangesAsync();
+                context.Companies.Remove(company);
+                await context.SaveChangesAsync();
             }
         }
     }
